@@ -148,11 +148,11 @@
 
 
 
-a =[1, 2, 3, "a", 1]
-#print(type(a))
-b =(1, 2, 3, "a", 1)
-#print(type(b))
-y ="abcabcabcabcabc"
+# a =[1, 2, 3, "a", 1]
+# #print(type(a))
+# b =(1, 2, 3, "a", 1)
+# #print(type(b))
+# y ="abcabcabcabcabc"
 #print(type(y))
 #kk = {1, 2, 3, "a", 1}
 #print(id(kk))
