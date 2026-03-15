@@ -87,7 +87,7 @@
 # get all value: -----------not have
 # get all PhTu: -----------not have
 # Đếm số PhTu lặp: x.count(value)
-
+### list support slicing vì list theo thứ tự[n:m]
 
 
 
