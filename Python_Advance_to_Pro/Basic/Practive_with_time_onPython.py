@@ -61,39 +61,38 @@ sys.stdout.reconfigure(encoding='utf-8') #terminal Python use UTF-8 để print,
 
 # tichs = time.time()#tichs == tích tắc (đồng hồ quả lắc) = sec
 nowtime = time.localtime()
+# print(nowtime)
+# print(type(nowtime))
 
-time_format = time.strftime(
-'%Y "năm 4 chữ số" - '
-'%y "năm 2 chữ số" - '
-'%m "tháng dạng số" - '
-'%B "tên tháng đầy đủ" - '
-'%b "tên tháng viết tắt" - '
-'%d "ngày trong tháng" - '
-'%A "thứ đầy đủ trong tuần" - '
-'%a "thứ viết tắt" - '
-'%H "giờ hệ 24h" - '
-'%I "giờ hệ 12h" - '
-'%p "AM hoặc PM" - '
-'%M "phút" - '
-'%S "giây" - '
-'%z "độ lệch múi giờ so với UTC" - '
-'%Z "tên múi giờ" - '
-'%j "ngày thứ bao nhiêu trong năm" - '
-'%U "số tuần trong năm (tuần bắt đầu chủ nhật)" - '
-'%W "số tuần trong năm (tuần bắt đầu thứ hai)" - '
-'%c "ngày giờ đầy đủ theo hệ thống" - '
-'%x "định dạng ngày" - '
-'%X "định dạng giờ" - '
-'%% "ký tự phần trăm"',
-nowtime
+time_format = (
+    f"{time.strftime('%Y', nowtime)} \"năm 4 chữ số\" - \n"
+    f"{time.strftime('%y', nowtime)} \"năm 2 chữ số\" - \n"
+    f"{time.strftime('%m', nowtime)} \"tháng dạng số\" - \n"
+    f"{time.strftime('%B', nowtime)} \"tên tháng đầy đủ\" - \n"
+    f"{time.strftime('%b', nowtime)} \"tên tháng viết tắt\" - \n"
+    f"{time.strftime('%d', nowtime)} \"ngày trong tháng\" - \n"
+    f"{time.strftime('%A', nowtime)} \"thứ đầy đủ trong tuần\" - \n"
+    f"{time.strftime('%a', nowtime)} \"thứ viết tắt\" - \n"
+    f"{time.strftime('%H', nowtime)} \"giờ hệ 24h\" - \n"
+    f"{time.strftime('%I', nowtime)} \"giờ hệ 12h\" - \n"
+    f"{time.strftime('%p', nowtime)} \"AM hoặc PM\" - \n"
+    f"{time.strftime('%M', nowtime)} \"phút\" - \n"
+    f"{time.strftime('%S', nowtime)} \"giây\" - \n"
+    f"{time.strftime('%z', nowtime)} \"độ lệch múi giờ so với UTC\" - \n"
+    f"{time.strftime('%Z', nowtime)} \"tên múi giờ\" - \n"
+    f"{time.strftime('%j', nowtime)} \"ngày thứ bao nhiêu trong năm\" - \n"
+    f"{time.strftime('%U', nowtime)} \"số tuần trong năm (tuần bắt đầu chủ nhật)\" - \n"
+    f"{time.strftime('%W', nowtime)} \"số tuần trong năm (tuần bắt đầu thứ hai)\" - \n"
+    f"{time.strftime('%c', nowtime)} \"ngày giờ đầy đủ theo hệ thống\" - \n"
+    f"{time.strftime('%x', nowtime)} \"định dạng ngày\" - \n"
+    f"{time.strftime('%X', nowtime)} \"định dạng giờ\" - \n"
+    "%% \"ký tự phần trăm\""
 )
 
 print(time_format)
 print(type(time_format))
 print("\n")
 
-print(nowtime)
-print(type(nowtime))
-# time_tuple = time.strptime(time_format)
-# print(time_tuple)
-# print(type(time_tuple))
+time_tuple = nowtime
+print(time_tuple)
+print(type(time_tuple))
