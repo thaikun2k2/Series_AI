@@ -82,8 +82,8 @@
 #update: x[n]  new value
 #add 1 PhTu: x.append() , x.insert()
 #Add N PhTu: x.extend()
-
-
+#chuyển đổi type: str(), tuple(), set(), list()
+#get all key: -----------not have
 
 
 
@@ -103,9 +103,9 @@
 #update: d[key] = new value
 #add 1 PhTu: d[new key] = value, d.setdefault(key,default) nếu đưa vào key mới thì tạo bthg, nếu đưa vào key cũ sẽ ko thay đổi j cả
 #Add N PhTu: d.update()
-
-
-
+#chuyển đổi type: dict(), constructor
+#get all key: z = d.key()  with z: class dict_keys
+# get all value: z = d.values() with z: class dict_values
 
 
 
@@ -114,8 +114,8 @@
 
 #######-----------Eg:-----------#######
 #
-d = {0:"Nguyễn Văn Tón", 1: "10 - 04 -2002", 2: 386188386}
-e = {"Full Name":"Nguyễn Văn Tón", "Birthday": "10 - 04 -2002", "Numbers Phone": 386188386}
+# d = {0:"Nguyễn Văn Tón", 1: "10 - 04 -2002", 2: 386188386}
+# e = {"Full Name":"Nguyễn Văn Tón", "Birthday": "10 - 04 -2002", "Numbers Phone": 386188386}
 
 
 #z = d[3]#báo lỗi "KeyError: 3"
@@ -315,6 +315,113 @@ e = {"Full Name":"Nguyễn Văn Tón", "Birthday": "10 - 04 -2002", "Numbers Pho
 # print(id(k))## id đã thay đổi 
 # print(id(e))## id đã ko thay đổi 
 
+###############################################################
 
 
+################## set: {}, dict: {}
+##### s : list -->> dict want key: value, use (), [], {}
+### xx = [0,"a", 1, "b", 2, "c"] if xx is list or tuple or set,not support dict but dict need key:value
 
+
+# xx = [(0,"a"), (1, "b"), (2, "c")] #đang là 1 list
+# x_x = dict(xx)
+# #print(xx)
+# print(type(xx))#list
+
+# #print(x_x)
+# print(type(x_x))# dict
+# print("\n")
+# #
+# aa = [{0, "a"}, {1, "b"}, {2, "c"}] #đang là 1 list
+# a_a = dict(aa)
+# #print(aa)
+# print(type(aa))#list
+
+# #print(a_a)
+# print(type(a_a))#dict
+# print("\n")
+
+# bb = [[0, "a"], [1, "b"], [2, "c"]]
+# b_b = dict(bb)
+# #print(bb)
+# print(type(bb))
+
+# #print(b_b)
+# print(type(b_b))
+# print("\n")
+
+
+#### set -->> dict want key: value, use () and not use [], {}
+##set is immutable; list and set is mutable should set down support list when -->> dict
+##not support when dd = {[0, "a"], [1, "b"], [2, "c"]} d_d =dict(dd) -->>> outcome: TypeError: unhashable type: 'list'
+##not support when dd = {{0, "a"}, {1, "b"}, {2, "c"}} d_d =dict(dd) -->>> outcome: TypeError: unhashable type: 'set'
+
+### ===>>> set -->> dict  want key: value, use () and not use [], {}
+
+##eg
+# ee = {(0,"a"), (1, "b"), (2, "c")} #đang là 1 set
+# e_e = dict(ee)
+# #print(ee)
+# print(type(ee))#set
+
+# #print(e_e)
+# print(type(e_e))#dict
+
+
+#####tuple -->> dict want key: value, use (), [], {}
+
+# ff = ((0,"a"), (1, "b"), (2, "c")) #đang là 1 tuple
+# f_f = dict(ff)
+# #print(ff)
+# print(type(ff))#tuple
+
+# #print(f_f)
+# print(type(f_f))# dict
+# print("\n")
+# #
+# gg = ({0, "a"}, {1, "b"}, {2, "c"}) #đang là 1 tuple
+# g_g = dict(gg)
+# #print(gg)
+# print(type(gg))#tuple
+
+# #print(g_g)
+# print(type(g_g))#dict
+# print("\n")
+
+# hh = ([0, "a"], [1, "b"], [2, "c"])
+# h_h = dict(hh)
+# #print(hh)
+# print(type(hh))
+
+# #print(h_h)
+# print(type(h_h))
+# print("\n")
+
+
+##===>>> tuple suport -->> dict want key: value, use (), [], {}
+
+# kk = {0 : "a", 1 : "b", 2 : "c"}
+# k1 = list(kk) ## chuyển đc nhưng kết quả chỉ thu đc key của dict
+# print(k1)
+# print(type(k1))
+
+# k2 = set(kk) ## chuyển đc nhưng kết quả chỉ thu đc key của dict
+# print(k2)
+# print(type(k2))
+
+# k3 = tuple(kk) ## chuyển đc nhưng kết quả chỉ thu đc key của dict
+# print(k3)
+# print(type(k3))
+
+#####################GET all key
+ll = {0 : "thai", 1 : "ngoc", 2 : "anh"}
+l1 = ll.keys()
+
+print(ll)
+
+print(l1)
+print(type(l1))
+
+l2 = ll.values()
+print(l2)
+print(type(l2))
