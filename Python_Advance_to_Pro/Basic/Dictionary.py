@@ -2,7 +2,7 @@
 #kết hợp ưu điểm giữa list và set, dictionary cho phép lưu trữ dữ liệu theo cặp key-value, trong đó key là một chuỗi hoặc một số, và value có thể là bất kỳ kiểu dữ liệu nào, bao gồm cả list hoặc dictionary khác.
 # tập hợp không có thứ tự, có thể thay đổi, và cho phép trùng lặp. Dictionary được sử dụng rộng rãi trong Python để lưu trữ và quản lý dữ liệu phức tạp, như thông tin người dùng, cấu hình, hoặc kết quả của các phép tính.
 #dictionary có chỉ số cho mỗi giá trị.
-
+# khi khai báo 2 lần cùng 1 key thì key new sẽ ghi đè lên key old eg: d = {0: "long", 1: "hồng", 2: "bưởi", 0: "đào"} khi print ra kết quả sẽ là: { 1: "hồng", 2: "bưởi", 0: "đào"}
 
 #list = ["đào", "hồng", "bưởi", "đào"]
 ########   0      1       2        3
@@ -84,6 +84,15 @@
 #Add N PhTu: x.extend()
 #chuyển đổi type: str(), tuple(), set(), list()
 #get all key: -----------not have
+# get all value: -----------not have
+# get all PhTu: -----------not have
+# Đếm số PhTu lặp: x.count(value)
+
+
+
+
+
+
 
 
 
@@ -104,8 +113,15 @@
 #add 1 PhTu: d[new key] = value, d.setdefault(key,default) nếu đưa vào key mới thì tạo bthg, nếu đưa vào key cũ sẽ ko thay đổi j cả
 #Add N PhTu: d.update()
 #chuyển đổi type: dict(), constructor
-#get all key: z = d.key()  with z: class dict_keys
+#get all key: z = d.keys()  with z: class dict_keys
 # get all value: z = d.values() with z: class dict_values
+# get all PhTu: z = d.items() with z:  class dict_items
+# Đếm số PhTu lặp: -----------not have
+###if in 2 TH: TH1: nhiều KEY có cùng 1 value. TH2: nhiều KEY ko có value nào. Can use khởi tạo hàng loạt == dict.fromkeys()
+#eg: bienD = dict.fromkeys(seq, value) đưa ra các key--> seq, sequence: list, tuple, set
+
+
+
 
 
 
@@ -414,14 +430,62 @@
 # print(type(k3))
 
 #####################GET all key
-ll = {0 : "thai", 1 : "ngoc", 2 : "anh"}
-l1 = ll.keys()
+# ll = {0 : "thai", 1 : "ngoc", 2 : "anh"}
+# l1 = ll.keys()
 
-print(ll)
+# print(ll)
 
-print(l1)
-print(type(l1))
+# print(l1)
+# print(type(l1))# <class 'dict_keys'>
 
-l2 = ll.values()
-print(l2)
-print(type(l2))
+# l2 = ll.values()
+# print(l2)
+# print(type(l2))# <class 'dict_values'>
+
+# l3 = ll.items()
+# print(l3)
+# print(type(l3))# <class 'dict_items'>
+
+###if 
+##TH1: nhiều KEY có cùng 1 value
+##TH2: nhiều KEY ko có value nào
+## Can use khởi tạo hàng loạt == dict.fromkeys()
+## if value is set or list else set or list thay đổi -->> value thay đổi
+
+# #case1: oo = {"manager" : "thai", "employee" : "thai", "leader" : "thai"}
+# x = ["manager", "leader", "employee"]
+# u = ("manager", "leader", "employee")
+# r = {"manager", "leader", "employee"}
+# ## use for set, list, tuple outcome success, because outcome of set not have thứ tự
+# s = ["Thai"]
+# y = ["Anh"]
+# p = {"Duyên"}
+# o = x
+#sos = s
+# print(s)
+# oo = dict.fromkeys(o, sos)
+# print(oo)
+# print(type(oo))
+
+####
+# o2 = dict.fromkeys(o)
+# print(o2)
+# print(type(o2))
+
+
+##### khi thay đổi update vào value thì khi dict.fromkeys() giá trị thay đổi ko áp dụng cho key
+### list
+# s.append("Trang")
+# print(s)
+# oo = dict.fromkeys(o, s)
+# print(oo)
+# print(type(oo))
+
+### set
+# p.add("Trang")
+# p.remove("Duyên")
+# print(p)
+# oo = dict.fromkeys(o, p)
+# print(oo)
+# print(type(oo))
+
