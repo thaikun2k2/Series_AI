@@ -29,3 +29,16 @@
 
 ##y = abs(x) trả outcome là y là trị tuyệt đối của x
 
+from math import * ## lấy tất cả thư viện math
+
+def tri_tuỵet_doi(x):
+    if x >= 0:
+        y = x
+    else:
+        y = -x
+    return y
+
+
+x = -5
+y = tri_tuỵet_doi(x)
+print(f'giá trị tuyệt đối của x là: {y}')
